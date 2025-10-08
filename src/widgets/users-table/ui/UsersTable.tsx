@@ -2,6 +2,7 @@
 
 import { memo } from 'react'
 import { UsersTableSkeleton } from './UsersTableSkeleton'
+import { UsersTableEmpty } from './UsersTableEmpty'
 import { UsersTableProps } from '../model/types'
 import { UsersMobileCards } from './UsersMobileCards'
 import { UsersDesktopTable } from './UsersDesktopTable'
@@ -10,6 +11,7 @@ import { UsersTableHeader } from './UsersTableHeader'
 function UsersTableComponent({
   users,
   loading,
+  error,
   onEdit,
   onCreate,
   onRefresh,
@@ -24,6 +26,15 @@ function UsersTableComponent({
     pageSize: pagination.pageSize,
     total: pagination.total,
     onChange: pagination.onChange,
+  }
+
+  if (!users || users.length === 0) {
+    return (
+      <div>
+        <UsersTableHeader onCreate={onCreate} />
+        <UsersTableEmpty onCreate={onCreate} error={error} />
+      </div>
+    )
   }
 
   return (

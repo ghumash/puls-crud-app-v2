@@ -11,6 +11,7 @@ export default function UsersPage() {
   const {
     users,
     loading,
+    error,
     totalUsers,
     currentPage,
     editingUser,
@@ -35,6 +36,7 @@ export default function UsersPage() {
           <UsersTable
             users={users}
             loading={loading}
+            error={error}
             onEdit={handleEdit}
             onCreate={createModalControls.setTrue}
             onRefresh={handleRefresh}

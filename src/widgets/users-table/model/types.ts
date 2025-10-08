@@ -3,6 +3,7 @@ import { Role, User } from '@/entities/user'
 export interface UsersTableProps {
   users: User[]
   loading: boolean
+  error?: string | null
   onEdit: (user: User) => void
   onCreate: () => void
   onRefresh: () => void

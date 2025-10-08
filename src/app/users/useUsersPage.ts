@@ -9,6 +9,7 @@ import { config } from '@/shared/config'
 export function useUsersPage() {
   const [users, setUsers] = useState<User[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
   const [currentPage, setCurrentPage] = useState(1)
   const [totalUsers, setTotalUsers] = useState(0)
   const [createModalOpen, createModalControls] = useToggle(false)
@@ -17,11 +18,17 @@ export function useUsersPage() {
 
   const fetchUsers = useCallback(async (page = 1) => {
     setLoading(true)
+    setError(null)
     try {
       const response = await getUsers(page, config.pagination.defaultPageSize)
       setUsers(response.data)
       setTotalUsers(response.total)
     } catch (error) {
+      const errorMessage =
+        error instanceof Error ? error.message : 'Ошибка при загрузке пользователей'
+      setError(errorMessage)
+      setUsers([])
+      setTotalUsers(0)
       showApiError(error, 'Ошибка при загрузке пользователей')
     } finally {
       setLoading(false)
@@ -62,26 +69,23 @@ export function useUsersPage() {
   }
 
   return {
-    // Data
     users,
     loading,
+    error,
     totalUsers,
     currentPage,
     editingUser,
-    
-    // Modal states
+
     createModalOpen,
     editModalOpen,
-    
-    // Handlers
+
     handlePageChange,
     handleCreateSuccess,
     handleEditSuccess,
     handleEdit,
     handleRefresh,
     handleEditCancel,
-    
-    // Modal controls
+
     createModalControls,
   }
 }
