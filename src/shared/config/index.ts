@@ -4,5 +4,3 @@ export const config = {
     defaultPageSize: 10,
   },
 } as const
-
-export * from './ui'

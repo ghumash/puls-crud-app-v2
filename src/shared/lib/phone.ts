@@ -51,5 +51,3 @@ export function getPhonePlaceholder(country: CountryCode = DEFAULT_COUNTRY): str
   }
   return 'Введите телефон'
 }
-
-export { DEFAULT_COUNTRY, PHONE_FORMAT_EXAMPLE }
