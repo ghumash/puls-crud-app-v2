@@ -1,10 +1,9 @@
 'use client'
 
-import type { UserForm } from '@/entities/user'
+import { UserModal, type UserForm } from '@/entities/user'
 import { createUser } from '../api/createUser'
 import { showApiError, showSuccessMessage } from '@/shared/lib'
 import { UserFormFields, useUserModal } from '@/features/user-form'
-import { UserModal } from '@/shared/ui/custom'
 
 interface UserCreateModalProps {
   open: boolean

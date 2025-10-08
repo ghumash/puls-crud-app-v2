@@ -1,11 +1,10 @@
 'use client'
 
 import { useMemo } from 'react'
-import type { UserForm, User } from '@/entities/user'
+import { type UserForm, type User, UserModal } from '@/entities/user'
 import { updateUser } from '../api/updateUser'
 import { showApiError, showSuccessMessage, getUserFormData } from '@/shared/lib'
 import { UserFormFields, useUserModal } from '@/features/user-form'
-import { UserModal } from '@/shared/ui/custom'
 
 interface UserEditModalProps {
   open: boolean
