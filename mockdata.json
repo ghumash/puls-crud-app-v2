@@ -1,0 +1,107 @@
+[
+  {
+    "id": "1",
+    "name": "Иван Петров",
+    "email": "ivan.petrov@email.com",
+    "phone": "+79991234567",
+    "role": "Admin"
+  },
+  {
+    "id": "2",
+    "name": "Анна Сидорова",
+    "email": "anna.sidorova@email.com",
+    "phone": "+79992345678",
+    "role": "Manager"
+  },
+  {
+    "id": "3",
+    "name": "Алексей Козлов",
+    "email": "alexey.kozlov@email.com",
+    "phone": "+79993456789",
+    "role": "User"
+  },
+  {
+    "id": "4",
+    "name": "Мария Волкова",
+    "email": "maria.volkova@email.com",
+    "phone": "+79994567890",
+    "role": "Manager"
+  },
+  {
+    "id": "5",
+    "name": "Дмитрий Морозов",
+    "email": "dmitry.morozov@email.com",
+    "phone": "+79995678901",
+    "role": "User"
+  },
+  {
+    "id": "6",
+    "name": "Елена Новикова",
+    "email": "elena.novikova@email.com",
+    "phone": "+79996789012",
+    "role": "Admin"
+  },
+  {
+    "id": "7",
+    "name": "Андрей Лебедев",
+    "email": "andrey.lebedev@email.com",
+    "phone": "+79997890123",
+    "role": "User"
+  },
+  {
+    "id": "8",
+    "name": "Ольга Соколова",
+    "email": "olga.sokolova@email.com",
+    "phone": "+79998901234",
+    "role": "Manager"
+  },
+  {
+    "id": "9",
+    "name": "Сергей Орлов",
+    "email": "sergey.orlov@email.com",
+    "phone": "+79999012345",
+    "role": "User"
+  },
+  {
+    "id": "10",
+    "name": "Татьяна Павлова",
+    "email": "tatiana.pavlova@email.com",
+    "phone": "+79990123456",
+    "role": "Admin"
+  },
+  {
+    "id": "11",
+    "name": "Николай Федоров",
+    "email": "nikolay.fedorov@email.com",
+    "phone": "+79991234568",
+    "role": "Manager"
+  },
+  {
+    "id": "12",
+    "name": "Екатерина Михайлова",
+    "email": "ekaterina.mikhaylova@email.com",
+    "phone": "+79992345679",
+    "role": "User"
+  },
+  {
+    "id": "13",
+    "name": "Владимир Кузнецов",
+    "email": "vladimir.kuznetsov@email.com",
+    "phone": "+79993456780",
+    "role": "User"
+  },
+  {
+    "id": "14",
+    "name": "Ирина Попова",
+    "email": "irina.popova@email.com",
+    "phone": "+79994567891",
+    "role": "Manager"
+  },
+  {
+    "id": "15",
+    "name": "Максим Васильев",
+    "email": "maxim.vasiliev@email.com",
+    "phone": "+79995678902",
+    "role": "Admin"
+  }
+]
