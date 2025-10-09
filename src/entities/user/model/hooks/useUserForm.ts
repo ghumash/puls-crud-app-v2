@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { userSchema, type UserForm } from '@/entities/user'
+import { userSchema, type UserForm } from '../schema'
 
 const defaultFormValues: UserForm = {
   name: '',
@@ -12,6 +12,7 @@ const defaultFormValues: UserForm = {
 export function useUserForm(defaultValues?: Partial<UserForm>) {
   return useForm<UserForm>({
     resolver: zodResolver(userSchema),
+    mode: 'onChange',
     defaultValues: {
       ...defaultFormValues,
       ...defaultValues,

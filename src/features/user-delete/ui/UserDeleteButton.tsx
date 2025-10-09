@@ -2,13 +2,7 @@
 
 import { useState } from 'react'
 import { Trash2 } from 'lucide-react'
-import {
-  Button,
-  Spinner,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/shared/ui'
+import { Button, Spinner, Popover, PopoverContent, PopoverTrigger } from '@/shared/ui'
 import { deleteUser } from '../api/deleteUser'
 import { showApiError, showSuccessMessage } from '@/shared/lib'
 
@@ -39,9 +33,9 @@ export function UserDeleteButton({ userId, userName, onSuccess }: UserDeleteButt
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button 
-          variant="ghost" 
-          size="sm" 
+        <Button
+          variant="ghost"
+          size="sm"
           className="h-8 w-8 p-0 text-destructive hover:text-destructive"
         >
           <Trash2 className="h-4 w-4" />

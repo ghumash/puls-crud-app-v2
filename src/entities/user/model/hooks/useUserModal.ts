@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import type { UserForm } from '@/entities/user'
-import { normalizePhone } from '@/shared/lib'
+import { normalizePhone } from '../phone'
+import { type UserForm } from '../schema'
 import { useUserForm } from './useUserForm'
-import { UseUserModalParams } from './types'
+import { UseUserModalParams } from '../types'
 
 export function useUserModal({ defaultValues, onSubmit, onCancel }: UseUserModalParams) {
   const {
@@ -24,6 +24,10 @@ export function useUserModal({ defaultValues, onSubmit, onCancel }: UseUserModal
       phone: normalizePhone(data.phone),
     }
     await onSubmit(normalizedData)
+
+    if (!defaultValues) {
+      reset()
+    }
   }
 
   const handleModalCancel = () => {

@@ -2,10 +2,10 @@
 
 import { Controller } from 'react-hook-form'
 import { Input, Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/ui'
-import { ROLE_OPTIONS } from '@/entities/user'
-import { normalizePhone, getPhonePlaceholder } from '@/shared/lib'
-import { FormField } from './FormField'
+import { ROLE_OPTIONS } from '../model/constants'
+import { normalizePhone, getPhonePlaceholder } from '../model/phone'
 import { UserFormFieldsProps } from '../model/types'
+import { FormField } from './FormField'
 
 export function UserFormFields({ control, errors }: UserFormFieldsProps) {
   return (
@@ -54,7 +54,7 @@ export function UserFormFields({ control, errors }: UserFormFieldsProps) {
                 <SelectValue placeholder="Выберите роль" />
               </SelectTrigger>
               <SelectContent>
-                {ROLE_OPTIONS.map(({ value, label }) => (
+                {ROLE_OPTIONS.map(({ value, label }: { value: string; label: string }) => (
                   <SelectItem key={value} value={value}>
                     {label}
                   </SelectItem>

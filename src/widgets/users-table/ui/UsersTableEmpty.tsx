@@ -1,5 +1,13 @@
 import { Users, Plus, AlertCircle } from 'lucide-react'
-import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription, EmptyContent, Button } from '@/shared/ui'
+import {
+  Empty,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+  EmptyDescription,
+  EmptyContent,
+  Button,
+} from '@/shared/ui'
 
 interface UsersTableEmptyProps {
   onCreate: () => void
@@ -8,22 +16,17 @@ interface UsersTableEmptyProps {
 
 export function UsersTableEmpty({ onCreate, error }: UsersTableEmptyProps) {
   const hasError = Boolean(error)
-  
+
   return (
     <Empty className="border-2 mt-4">
       <EmptyHeader>
-        <EmptyMedia variant="icon">
-          {hasError ? <AlertCircle /> : <Users />}
-        </EmptyMedia>
+        <EmptyMedia variant="icon">{hasError ? <AlertCircle /> : <Users />}</EmptyMedia>
         <EmptyContent>
-          <EmptyTitle>
-            {hasError ? 'Ошибка загрузки данных' : 'Нет пользователей'}
-          </EmptyTitle>
+          <EmptyTitle>{hasError ? 'Ошибка загрузки данных' : 'Нет пользователей'}</EmptyTitle>
           <EmptyDescription>
-            {hasError 
-              ? error 
-              : 'Пользователи не найдены. Создайте первого пользователя чтобы начать работу.'
-            }
+            {hasError
+              ? error
+              : 'Пользователи не найдены. Создайте первого пользователя чтобы начать работу.'}
           </EmptyDescription>
           {!hasError && (
             <Button onClick={onCreate} className="mt-2">

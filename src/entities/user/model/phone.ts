@@ -1,7 +1,7 @@
-import { parsePhoneNumberWithError, isValidPhoneNumber, CountryCode } from 'libphonenumber-js'
+import { parsePhoneNumberWithError, CountryCode } from 'libphonenumber-js'
 
 const DEFAULT_COUNTRY: CountryCode = 'RU'
-const PHONE_FORMAT_EXAMPLE = '+79991234567'
+const DEFAULT_FORMAT = '+7xxx1234567'
 
 export function normalizePhone(phone: string, country: CountryCode = DEFAULT_COUNTRY): string {
   if (!phone) return phone
@@ -18,7 +18,9 @@ export function isValidPhone(phone: string, country: CountryCode = DEFAULT_COUNT
   if (!phone) return false
 
   try {
-    return isValidPhoneNumber(phone, country)
+    const phoneNumber = parsePhoneNumberWithError(phone, country)
+
+    return phoneNumber.isValid() && phoneNumber.country === country
   } catch {
     return false
   }
@@ -40,14 +42,14 @@ export function formatPhoneForDisplay(
 
 export function getPhoneValidationMessage(country: CountryCode = DEFAULT_COUNTRY): string {
   if (country === 'RU') {
-    return `Формат: ${PHONE_FORMAT_EXAMPLE}`
+    return `Введите корректный российский номер. Проверьте код оператора/города после +7. Формат: ${DEFAULT_FORMAT}`
   }
-  return 'Некорректный формат телефона'
+  return `Некорректный формат телефона для страны ${country}`
 }
 
 export function getPhonePlaceholder(country: CountryCode = DEFAULT_COUNTRY): string {
   if (country === 'RU') {
-    return PHONE_FORMAT_EXAMPLE
+    return DEFAULT_FORMAT
   }
   return 'Введите телефон'
 }

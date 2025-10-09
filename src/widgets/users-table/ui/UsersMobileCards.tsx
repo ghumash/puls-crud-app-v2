@@ -6,7 +6,7 @@ import { Button, Card } from '@/shared/ui'
 import { RoleBadge } from './RoleBadge'
 import { TablePagination } from './TablePagination'
 import { UserDeleteButton } from '@/features/user-delete'
-import { formatPhoneForDisplay } from '@/shared/lib'
+import { formatPhoneForDisplay } from '@/entities/user'
 import { UserCardProps, UsersMobileCardsProps } from '../model/types'
 
 function UserCard({ user, onEdit, onRefresh }: UserCardProps) {

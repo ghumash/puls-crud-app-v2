@@ -1,6 +1,6 @@
 import { PaginatedResponse } from '@/shared/api'
-
-export type Role = 'Admin' | 'User' | 'Manager'
+import { Control, FieldErrors } from 'react-hook-form'
+import { UserForm } from './schema'
 
 export interface User {
   id: string
@@ -21,3 +21,16 @@ export interface UserModalProps {
 }
 
 export type UsersResponse = PaginatedResponse<User>
+
+export type Role = 'Admin' | 'User' | 'Manager'
+
+export interface UserFormFieldsProps {
+  control: Control<UserForm>
+  errors: FieldErrors<UserForm>
+}
+
+export interface UseUserModalParams {
+  defaultValues?: Partial<UserForm>
+  onSubmit: (data: UserForm) => Promise<void>
+  onCancel: () => void
+}
